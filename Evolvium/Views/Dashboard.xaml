@@ -19,10 +19,9 @@
                 <Button Content="X" Padding="10" Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FFFF6B6B" Click="HideMenuButton_Click" />
                 <TextBlock Text="Menu" FontSize="20" FontWeight="Bold" Margin="10" />
 
-                <Button Content="Dashboard" Margin="10" Padding="10" />
-                <Button Content="Students" Margin="10" Padding="10" />
+                <Button Content="Students" Margin="10" Padding="10" Click="NavigateToStudents" />
                 <Button Content="Degrees" Margin="10" Padding="10" />
-                <Button Content="Modules" Margin="10" Padding="10" />
+                <Button Content="Modules" Margin="10" Padding="10" Click="NavigateToModules" />
                 <Button Content="Assessments" Margin="10" Padding="10" />
                 <Button Content="Log out" Margin="10" Padding="10" />
             </StackPanel>

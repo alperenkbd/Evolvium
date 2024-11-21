@@ -42,5 +42,15 @@ namespace Evolvium.Presentation
             MenuPanel.Visibility = Visibility.Collapsed;
             MenuButton.Visibility = Visibility.Visible;
         }
+
+        private void NavigateToStudents(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Students());
+        }
+
+        private void NavigateToModules(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Modules());
+        }
     }
 }
