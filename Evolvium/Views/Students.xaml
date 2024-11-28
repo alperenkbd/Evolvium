@@ -3,51 +3,65 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Evolvium.Presentation"
+      xmlns:local="clr-namespace:Evolvium.Presentation.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Students">
 
+    <Page.DataContext>
+        <local:StudentsViewModel/>
+    </Page.DataContext>
+
     <Grid Margin="20">
-        
+
         <TextBlock Text="STUDENTS" 
-                   FontSize="30" 
-                   FontWeight="Bold" 
-                   HorizontalAlignment="Center" 
-                   VerticalAlignment="Top" 
-                   Margin="0,20,0,0" 
-                   Foreground="DarkRed"/>
+           FontSize="30" 
+           FontWeight="Bold" 
+           HorizontalAlignment="Center" 
+           VerticalAlignment="Top" 
+           Margin="0,20,0,0" 
+           Foreground="DarkRed"/>
 
         <Button Content="+ ADD A NEW STUDENT" 
-                Width="200" 
-                Height="40" 
-                HorizontalAlignment="Left" 
-                VerticalAlignment="Top" 
-                Margin="10,80,0,0"
-                Background="White" 
-                Foreground="Green"
-                BorderBrush="Green"
-                FontWeight="Bold"
-                Click="AddModule_Click"/>
+        Width="200" 
+        Height="40" 
+        HorizontalAlignment="Left" 
+        VerticalAlignment="Top" 
+        Margin="10,80,0,0"
+        Background="White" 
+        Foreground="Green"
+        BorderBrush="Green"
+        FontWeight="Bold"
+        Click="AddStudent_Click"/>
 
-        <DataGrid x:Name="StudentsGrid"
-                  Margin="0,140,0,0" 
-                  AutoGenerateColumns="False" 
-                  CanUserAddRows="False" 
-                  HorizontalAlignment="Stretch" 
-                  VerticalAlignment="Stretch"
-                  IsReadOnly="True"
-                  Background="LightGray" 
-                  RowBackground="#F9F9F9" 
-                  AlternatingRowBackground="#EDEDED"
-                  BorderThickness="0">
-
+        <DataGrid
+        ItemsSource="{Binding Student}" 
+        AutoGenerateColumns="False"
+        x:Name="ModulesGrid"
+        Margin="0,140,0,0" 
+        CanUserAddRows="False" 
+        HorizontalAlignment="Stretch" 
+        VerticalAlignment="Stretch"
+        IsReadOnly="True"
+        Background="LightGray" 
+        RowBackground="#F9F9F9" 
+        AlternatingRowBackground="#EDEDED"
+        BorderThickness="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Number" Binding="{Binding Number}" Width="*"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
-                <DataGridTextColumn Header="Surname" Binding="{Binding Surname}" Width="*"/>
-                <DataGridTextColumn Header="Degree" Binding="{Binding Degree}" Width="*"/>
-                <DataGridTextColumn Header="Year" Binding="{Binding Year}" Width="*"/>
+                <DataGridTextColumn Header="Number" Binding="{Binding Number}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Surname" Binding="{Binding Surname}" />
+                <DataGridTextColumn Header="Degree" Binding="{Binding Degree}" />
+                <DataGridTextColumn Header="Year" Binding="{Binding Year}" />
+                <DataGridTemplateColumn Header="Action">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Update"
+                                Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

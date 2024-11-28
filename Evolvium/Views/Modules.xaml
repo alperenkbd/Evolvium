@@ -51,10 +51,12 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Number" Binding="{Binding Number}" />
                 <DataGridTextColumn Header="Module Name" Binding="{Binding ModuleName}" />
+                <DataGridTextColumn Header="Degree Name" Binding="{Binding DegreeName}" />
+                <DataGridTextColumn Header="Max Score" Binding="{Binding MaxScore}" />
                 <DataGridTemplateColumn Header="Action">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Edit"
+                            <Button Content="Update"
                                     Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=Page}}"
                                     CommandParameter="{Binding}" />
                         </DataTemplate>

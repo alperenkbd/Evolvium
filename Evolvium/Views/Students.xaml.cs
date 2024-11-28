@@ -15,16 +15,10 @@ namespace Evolvium.Presentation
         {
             InitializeComponent();
 
-            StudentsGrid.ItemsSource = new List<Student>
-            {
-                new Student { Number = "20224A127645", Name = "John", 
-                    Surname = "Sparrow", Degree = "2",Year = "2024-2025" },
-                
-            };
         }
 
 
-        private void AddModule_Click(object sender, RoutedEventArgs e)
+        private void AddStudent_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Add Module functionality to be implemented.");
         }

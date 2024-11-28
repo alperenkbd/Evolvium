@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Evolvium.Presentation.Views;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Evolvium.Presentation
@@ -51,6 +52,11 @@ namespace Evolvium.Presentation
         private void NavigateToModules(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Modules());
+        }
+
+        private void NavigateToDegrees(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Degrees());
         }
     }
 }
