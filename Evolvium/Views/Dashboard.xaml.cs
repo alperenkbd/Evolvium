@@ -58,5 +58,15 @@ namespace Evolvium.Presentation
         {
             NavigationService.Navigate(new Degrees());
         }
+
+        private void NavigateToAssesments(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Assesments());
+        }
+
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -22,8 +22,8 @@
                 <Button Content="Students" Margin="10" Padding="10" Click="NavigateToStudents" />
                 <Button Content="Degrees" Margin="10" Padding="10" Click="NavigateToDegrees" />
                 <Button Content="Modules" Margin="10" Padding="10" Click="NavigateToModules" />
-                <Button Content="Assessments" Margin="10" Padding="10" />
-                <Button Content="Log out" Margin="10" Padding="10" />
+                <Button Content="Assessments" Margin="10" Padding="10" Click="NavigateToAssesments" />
+                <Button Content="Log out" Margin="10" Padding="10" Click="Logout" />
             </StackPanel>
         </Grid>
 
