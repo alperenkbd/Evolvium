@@ -1,5 +1,4 @@
-﻿using Evolvium.Presentation.Views.Form;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,23 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Evolvium.Presentation.Views
+namespace Evolvium.Presentation.Views.Form
 {
     /// <summary>
-    /// Interaction logic for Degrees.xaml
+    /// Interaction logic for ModulesForm.xaml
     /// </summary>
-    public partial class Degrees : Page
+    public partial class ModulesForm : Page
     {
-        public Degrees()
+        public ModulesForm()
         {
             InitializeComponent();
         }
 
-        private void AddDegree_Click(object sender, RoutedEventArgs e)
+        private void GoBack_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new DegreesForm());
+            NavigationService.GoBack();
         }
     }
 }

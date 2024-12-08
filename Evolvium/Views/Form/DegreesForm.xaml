@@ -1,0 +1,56 @@
+﻿<Page x:Class="Evolvium.Presentation.Views.Form.DegreesForm"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Evolvium.Presentation.ViewModels"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DegreesForm">
+
+    <Page.DataContext>
+        <local:DegreesFormViewModel/>
+    </Page.DataContext>
+
+    <Grid Margin="10">
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Width="300">
+            <TextBlock Text="Add New Degree" 
+               FontSize="24" 
+               FontWeight="Bold" 
+               Foreground="DarkRed" 
+               HorizontalAlignment="Center" 
+               Margin="0,0,0,20"/>
+            <Label x:Name="Label0" Content="Number" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
+            <TextBox Text="{Binding CurrentDegree.Number}" 
+        FontSize="24" 
+        HorizontalAlignment="Center" 
+        Margin="0,0,0,20"
+        Width="300"/>
+            <Label x:Name="Label1" Content="Degree Name" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
+            <TextBox Text="{Binding CurrentDegree.Name}" 
+               FontSize="24" 
+               HorizontalAlignment="Center" 
+               Margin="0,0,0,20"
+               Width="300"/>
+            <Label x:Name="Label2" Content="Length Of Degree" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
+            <TextBox Text="{Binding CurrentDegree.LengthOfDegree}" 
+              FontSize="24" 
+               HorizontalAlignment="Center" 
+               Margin="0,0,0,20"
+               Width="300"/>
+
+            <Button Content="Add Student" 
+            Command="{Binding CreateCommand}" 
+            Background="DarkGreen"
+            Foreground="White"
+            Height="40"
+            Margin="0,20,0,0"/>
+            <Button Content="Go Back" 
+            Click="GoBack_Click" 
+            Background="DarkRed"
+            Foreground="White"
+            Height="40"
+            Margin="0,20,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>

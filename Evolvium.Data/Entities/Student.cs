@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Evolvium.Presentation.Models
+namespace Evolvium.Data.Entities
 {
     public class Student
     {
-        public string Number { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Degree { get; set; }
         public string Year { get; set; }
     }

@@ -5,14 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Evolvium.Presentation.Models
+namespace Evolvium.Bussines.Models
 {
-    public class Module
+    public class ModuleModel
     {
-        public string Number { get; set; }
+        public int Id { get; set; }
         public string ModuleName { get; set; }
         public string DegreeName { get; set; }
         public string MaxScore { get; set; }
-        public ICommand EditCommand { get; set; }
     }
 }

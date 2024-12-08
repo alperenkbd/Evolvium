@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Evolvium.Presentation.Views.Form;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,7 @@ namespace Evolvium.Presentation
 
         private void AddModule_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Add Module functionality to be implemented.");
+            NavigationService.Navigate(new ModulesForm());
         }
     }
 }

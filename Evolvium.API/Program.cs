@@ -1,3 +1,8 @@
+using Evolvium.Bussines.Interfaces;
+using Evolvium.Bussines.Services;
+using Evolvium.Data.Interfaces;
+using Evolvium.Data.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,6 +13,19 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+builder.Services.AddScoped<IStudentService, StudentService>();
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+
+builder.Services.AddScoped<IModuleService, ModuleService>();
+builder.Services.AddScoped<IModuleRepository, ModuleRepository>();
+
+builder.Services.AddScoped<IDegreeService, DegreeService>();
+builder.Services.AddScoped<IDegreeRepository, DegreeRepository>();
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

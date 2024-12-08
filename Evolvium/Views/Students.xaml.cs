@@ -1,5 +1,8 @@
 ﻿
 using Evolvium.Presentation.Models;
+using Evolvium.Presentation.ViewModels;
+using Evolvium.Presentation.Views;
+using Evolvium.Presentation.Views.Form;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -20,7 +23,7 @@ namespace Evolvium.Presentation
 
         private void AddStudent_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Add Module functionality to be implemented.");
+            NavigationService.Navigate(new StudentsForm());
         }
 
 

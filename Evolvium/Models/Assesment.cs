@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Evolvium.Presentation.Models
 {
-    internal class Assesment
+    public class Assesment
     {
         public Guid AssesmentId { get; set; }
         public Student? DefinedStudent { get; set; }
