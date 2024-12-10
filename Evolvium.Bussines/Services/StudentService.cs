@@ -51,7 +51,7 @@ namespace Evolvium.Bussines.Services
                 FirstName = student.FirstName,
                 LastName = student.LastName,
                 Degree = student.Degree,
-                Year = student.Year,
+                Year = student.Year
 
             });
         }

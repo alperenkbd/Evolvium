@@ -39,8 +39,8 @@ namespace Evolvium.Data.Repositories
 
         public async Task<Module> GetModuleByIdAsync(int id)
         {
-            var students = await GetAllModulesAsync();
-            return students.FirstOrDefault(s => s.Id == id);
+            var modules = await GetAllModulesAsync();
+            return modules.FirstOrDefault(s => s.Id == id.ToString());
         }
     }
 }

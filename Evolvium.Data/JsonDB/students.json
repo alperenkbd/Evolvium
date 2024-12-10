@@ -1,23 +1,16 @@
 [
   {
-    "Id": 1,
-    "FirstName": "a",
-    "LastName": "a",
-    "Degree": "master",
-    "Year": "3"
+    "Id": "2024720262",
+    "FirstName": "Alperen",
+    "LastName": "Kabadayi",
+    "Degree": "Master Of Art",
+    "Year": 0
   },
   {
-    "Id": 2,
-    "FirstName": "asd",
-    "LastName": "asd",
-    "Degree": null,
-    "Year": null
-  },
-  {
-    "Id": 3,
-    "FirstName": "e",
-    "LastName": "e",
-    "Degree": null,
-    "Year": null
+    "Id": "2024332489",
+    "FirstName": "gabari",
+    "LastName": "gondur",
+    "Degree": "Master Of Arts",
+    "Year": 0
   }
 ]

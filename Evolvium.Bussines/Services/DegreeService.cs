@@ -33,10 +33,12 @@ namespace Evolvium.Bussines.Services
             var degrees = await _degreeRepository.GetAllDegreesAsync();
             return degrees.Select(s => new DegreeModel
             {
-                Id = s.Id,
+                Id = GenerateDegreeID(),
                 LengthOfDegree = s.LengthOfDegree,
                 Name = s.Name
             });
         }
+
+        public static string GenerateDegreeID() => new Random().Next(100000, 999999).ToString();
     }
 }

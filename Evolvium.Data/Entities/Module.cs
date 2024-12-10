@@ -8,7 +8,7 @@ namespace Evolvium.Data.Entities
 {
     public class Module
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Number { get; set; }
         public string ModuleName { get; set; }
         public string DegreeName { get; set; }

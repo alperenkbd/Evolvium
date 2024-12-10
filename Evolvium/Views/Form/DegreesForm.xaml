@@ -20,27 +20,29 @@
                Foreground="DarkRed" 
                HorizontalAlignment="Center" 
                Margin="0,0,0,20"/>
-            <Label x:Name="Label0" Content="Number" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
-            <TextBox Text="{Binding CurrentDegree.Number}" 
+            <!--<Label x:Name="Label0" Content="Number" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
+            <TextBox Text="{Binding CurrentDegree.Id}" 
         FontSize="24" 
         HorizontalAlignment="Center" 
         Margin="0,0,0,20"
-        Width="300"/>
+        Width="300"/>-->
             <Label x:Name="Label1" Content="Degree Name" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
-            <TextBox Text="{Binding CurrentDegree.Name}" 
+            <TextBox Text="{Binding CurrentDegree.Name, UpdateSourceTrigger=PropertyChanged}" 
                FontSize="24" 
                HorizontalAlignment="Center" 
                Margin="0,0,0,20"
                Width="300"/>
             <Label x:Name="Label2" Content="Length Of Degree" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
-            <TextBox Text="{Binding CurrentDegree.LengthOfDegree}" 
-              FontSize="24" 
-               HorizontalAlignment="Center" 
-               Margin="0,0,0,20"
-               Width="300"/>
+            <ComboBox 
+                ItemsSource="{Binding DegreeLengths}" 
+                SelectedItem="{Binding CurrentDegree.LengthOfDegree, UpdateSourceTrigger=PropertyChanged}" 
+                FontSize="24" 
+                HorizontalAlignment="Center" 
+                Margin="0,0,0,20" 
+                Width="300"/>
 
-            <Button Content="Add Student" 
-            Command="{Binding CreateCommand}" 
+            <Button Content="Add Degree" 
+            Command="{Binding CreateADegreeCommand}" 
             Background="DarkGreen"
             Foreground="White"
             Height="40"

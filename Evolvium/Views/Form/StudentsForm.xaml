@@ -20,7 +20,7 @@
                    Foreground="DarkRed" 
                    HorizontalAlignment="Center" 
                    Margin="0,0,0,20"/>
-            <Label x:Name="Label0" Content="Number" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
+            <!--<Label x:Name="Label0" Content="Number" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>-->
             <!--<TextBox Text="{Binding CurrentStudent.Number, UpdateSourceTrigger=PropertyChanged}" 
             FontSize="24" 
             HorizontalAlignment="Center" 
@@ -40,17 +40,22 @@
                    Margin="0,0,0,20"
                    Width="300"/>
             <Label x:Name="Label3" Content="Degree" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
-            <TextBox Text="{Binding CurrentStudent.Degree, UpdateSourceTrigger=PropertyChanged}" 
-                  FontSize="24" 
-                   HorizontalAlignment="Center" 
-                   Margin="0,0,0,20"
-                   Width="300"/>
-            <Label x:Name="Label4" Content="Year" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
+            <ComboBox 
+                ItemsSource="{Binding Degrees}" 
+                SelectedItem="{Binding CurrentStudent.Degree, UpdateSourceTrigger=PropertyChanged}" 
+                DisplayMemberPath="Name" 
+                FontSize="24" 
+                HorizontalAlignment="Center" 
+                Margin="0,0,0,20" 
+                Width="300"
+                SelectionChanged="ComboBox_SelectionChanged"
+                DropDownOpened="ComboBox_DropDownOpened"/>
+            <!--<Label x:Name="Label4" Content="Year" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
             <TextBox Text="{Binding CurrentStudent.Year, UpdateSourceTrigger=PropertyChanged}" 
                   FontSize="24" 
                    HorizontalAlignment="Center" 
                    Margin="0,0,0,20"
-                   Width="300"/>
+                   Width="300"/>-->
 
             <Button Content="Add Student" 
                 Command="{Binding CreateAStudentCommand}" 

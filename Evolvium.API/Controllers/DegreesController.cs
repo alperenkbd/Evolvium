@@ -25,7 +25,7 @@ namespace Evolvium.API.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> AddStudent([FromBody] DegreeModel degree)
+        public async Task<IActionResult> AddDegree([FromBody] DegreeModel degree)
         {
             await _degreeServices.AddDegreeAsync(degree);
             return CreatedAtAction(nameof(GetDegrees), new { id = degree.Id }, degree);

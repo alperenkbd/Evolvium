@@ -34,7 +34,7 @@
     Click="AddDegree_Click"/>
 
         <DataGrid
-    ItemsSource="{Binding Degree}" 
+    ItemsSource="{Binding Degrees}" 
     AutoGenerateColumns="False"
     x:Name="ModulesGrid"
     Margin="0,140,0,0" 

@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,28 +15,46 @@ namespace Evolvium.Presentation.ViewModels
 
     internal class DegreesViewModel : BaseViewModel
     {
-        public ObservableCollection<Degree> Degree { get; set; }
+        private readonly HttpClient _httpClient;
+        public ObservableCollection<Degree> Degrees { get; set; }
+        public RelayCommand LoadDegreesCommand { get; }
 
         public RelayCommand EditCommand { get; }
 
         public DegreesViewModel()
         {
-            Degree = new ObservableCollection<Degree>
+            _httpClient = new HttpClient
             {
-                new Degree {  Number = "msc435454",Name= "Master's Degree", LengthOfDegree = 1}
+                BaseAddress = new Uri("http://localhost:5218/")
             };
 
-            EditCommand = new RelayCommand(OnEditDegree);
+            LoadDegreesCommand = new RelayCommand(async _ => await LoadDegreesAsync());
+
+            _ = LoadDegreesAsync();
+
         }
 
-        private void OnEditDegree(object parameter)
+        private async Task LoadDegreesAsync()
         {
-            var degree = parameter as Degree;
-            if (degree != null)
+            try
             {
-                MessageBox.Show($"Editing Module: {degree.Number}");
+                var degrees = await _httpClient.GetFromJsonAsync<List<Degree>>("api/Degrees");
+                if (degrees != null)
+                {
+                    Degrees?.Clear();
+                    foreach (var degree in degrees)
+                    {
+                        Degrees?.Add(degree);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching degrees: {ex.Message}");
             }
         }
+
+
     }
 
 }
