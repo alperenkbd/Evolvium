@@ -35,7 +35,7 @@
         Click="AddStudent_Click"/>
 
         <DataGrid
-        ItemsSource="{Binding Student}" 
+        ItemsSource="{Binding Students}" 
         AutoGenerateColumns="False"
         x:Name="ModulesGrid"
         Margin="0,140,0,0" 
@@ -48,9 +48,9 @@
         AlternatingRowBackground="#EDEDED"
         BorderThickness="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Number" Binding="{Binding Number}" />
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Surname" Binding="{Binding Surname}" />
+                <DataGridTextColumn Header="Identity" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding FirstName}" />
+                <DataGridTextColumn Header="Surname" Binding="{Binding LastName}" />
                 <DataGridTextColumn Header="Degree" Binding="{Binding Degree}" />
                 <DataGridTextColumn Header="Year" Binding="{Binding Year}" />
                 <DataGridTemplateColumn Header="Action">

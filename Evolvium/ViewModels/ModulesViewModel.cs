@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,19 +15,45 @@ namespace Evolvium.Presentation.ViewModels
 {
     internal class ModulesViewModel : BaseViewModel
     {
+        private readonly HttpClient _httpClient;
 
         public ObservableCollection<Module> Modules { get; set; }
 
         public RelayCommand EditCommand { get; }
+        public RelayCommand LoadModulesCommand { get; }
 
         public ModulesViewModel()
         {
-            Modules = new ObservableCollection<Module>
+            _httpClient = new HttpClient
             {
-                new Module { Number = "20224A127645", ModuleName = "Module 1", DegreeName = "Master's Degree", MaxScore = "100" }
+                BaseAddress = new Uri("http://localhost:5218/")
             };
 
+            LoadModulesCommand = new RelayCommand(async _ => await LoadModulesAsync());
+
+            _ = LoadModulesAsync();
+
             EditCommand = new RelayCommand(OnEditModule);
+        }
+
+        private async Task LoadModulesAsync()
+        {
+            try
+            {
+                var modules = await _httpClient.GetFromJsonAsync<List<Module>>("api/Modules");
+                if (modules != null)
+                {
+                    Modules.Clear();
+                    foreach (var module in modules)
+                    {
+                        Modules.Add(module);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching modules: {ex.Message}");
+            }
         }
 
         private void OnEditModule(object parameter)

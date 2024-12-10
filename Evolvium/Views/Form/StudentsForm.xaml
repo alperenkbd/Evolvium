@@ -21,38 +21,39 @@
                    HorizontalAlignment="Center" 
                    Margin="0,0,0,20"/>
             <Label x:Name="Label0" Content="Number" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
-            <TextBox Text="{Binding CurrentStudent.Number}" 
+            <!--<TextBox Text="{Binding CurrentStudent.Number, UpdateSourceTrigger=PropertyChanged}" 
             FontSize="24" 
             HorizontalAlignment="Center" 
             Margin="0,0,0,20"
-            Width="300"/>
+            Width="300"/>-->
+            
             <Label x:Name="Label1" Content="Name" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
-            <TextBox Text="{Binding CurrentStudent.Name}" 
+            <TextBox Text="{Binding CurrentStudent.FirstName, UpdateSourceTrigger=PropertyChanged}" 
                    FontSize="24" 
                    HorizontalAlignment="Center" 
                    Margin="0,0,0,20"
                    Width="300"/>
             <Label x:Name="Label2" Content="Surname" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
-            <TextBox Text="{Binding CurrentStudent.Surname}" 
+            <TextBox Text="{Binding CurrentStudent.LastName, UpdateSourceTrigger=PropertyChanged}" 
                   FontSize="24" 
                    HorizontalAlignment="Center" 
                    Margin="0,0,0,20"
                    Width="300"/>
             <Label x:Name="Label3" Content="Degree" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
-            <TextBox Text="{Binding CurrentStudent.Degree}" 
+            <TextBox Text="{Binding CurrentStudent.Degree, UpdateSourceTrigger=PropertyChanged}" 
                   FontSize="24" 
                    HorizontalAlignment="Center" 
                    Margin="0,0,0,20"
                    Width="300"/>
             <Label x:Name="Label4" Content="Year" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
-            <TextBox Text="{Binding CurrentStudent.Year}" 
+            <TextBox Text="{Binding CurrentStudent.Year, UpdateSourceTrigger=PropertyChanged}" 
                   FontSize="24" 
                    HorizontalAlignment="Center" 
                    Margin="0,0,0,20"
                    Width="300"/>
 
             <Button Content="Add Student" 
-                Command="{Binding CreateCommand}" 
+                Command="{Binding CreateAStudentCommand}" 
                 Background="DarkGreen"
                 Foreground="White"
                 Height="40"

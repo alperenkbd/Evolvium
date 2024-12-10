@@ -21,7 +21,6 @@ namespace Evolvium.Bussines.Services
 
         public async Task<IEnumerable<StudentModel>> GetAllStudentsAsync()
         {
-            // Veriyi Data katmanından al
             var students = await _studentRepository.GetAllStudentsAsync();
             return students.Select(s => new StudentModel
             {
@@ -48,9 +47,16 @@ namespace Evolvium.Bussines.Services
         {
             await _studentRepository.AddStudentAsync(new Data.Entities.Student
             {
+                Id = GenerateStudentID(),
                 FirstName = student.FirstName,
-                LastName = student.LastName
+                LastName = student.LastName,
+                Degree = student.Degree,
+                Year = student.Year,
+
             });
         }
+
+        public static string GenerateStudentID() => $"{DateTime.Now.Year}{new Random().Next(100000, 999999)}";
+
     }
 }
