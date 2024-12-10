@@ -15,6 +15,13 @@
 
     <Grid Margin="20">
 
+        <Button Content="&#x2190;" 
+            FontSize="16"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10"
+            Click="BackButton_Click"/>
+        
         <TextBlock Text="MODULES" 
                FontSize="30" 
                FontWeight="Bold" 
@@ -23,7 +30,7 @@
                Margin="0,20,0,0" 
                Foreground="DarkRed"/>
 
-        <Button Content="+ ADD A NEW MODULE" 
+        <!--<Button Content="+ ADD A NEW MODULE" 
             Width="200" 
             Height="40" 
             HorizontalAlignment="Left" 
@@ -33,7 +40,7 @@
             Foreground="Green"
             BorderBrush="Green"
             FontWeight="Bold"
-            Click="AddModule_Click"/>
+            Click="AddModule_Click"/>-->
 
         <DataGrid
             ItemsSource="{Binding Modules}" 
@@ -49,16 +56,16 @@
             AlternatingRowBackground="#EDEDED"
             BorderThickness="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Number" Binding="{Binding Number}" />
+                <DataGridTextColumn Header="Module Id" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Module Name" Binding="{Binding ModuleName}" />
-                <DataGridTextColumn Header="Degree Name" Binding="{Binding DegreeName}" />
+                <DataGridTextColumn Header="Degree Id" Binding="{Binding DegreeId}" />
                 <DataGridTextColumn Header="Max Score" Binding="{Binding MaxScore}" />
                 <DataGridTemplateColumn Header="Action">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Update"
                                     Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=Page}}"
-                                    CommandParameter="{Binding}" />
+                                    CommandParameter="{Binding Id}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

@@ -17,7 +17,7 @@ namespace Evolvium.Presentation.ViewModels
     {
         private readonly HttpClient _httpClient;
 
-        public ObservableCollection<Module> Modules { get; set; }
+        public ObservableCollection<Module> Modules { get; set; } = new ObservableCollection<Module>();
 
         public RelayCommand EditCommand { get; }
         public RelayCommand LoadModulesCommand { get; }

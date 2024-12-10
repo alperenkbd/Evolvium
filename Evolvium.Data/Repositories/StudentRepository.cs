@@ -9,27 +9,18 @@ using System.Threading.Tasks;
 
 namespace Evolvium.Data.Repositories
 {
-    public class StudentRepository : IStudentRepository
+    public class StudentRepository : BaseRepository ,IStudentRepository
     {
-        private readonly string _filePath;
+        
 
-        public StudentRepository()
+        public StudentRepository() : base("students.json")
         {
-            string _projectRoot = Path.GetFullPath
-                (Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\..\Evolvium\Evolvium.Data\JsonDB"));
-            _filePath = Path.Combine(_projectRoot, "students.json");
+            //override constructor because the json file names are different 
+        }
 
-            var directory = Path.GetDirectoryName(_filePath);
-            if (!Directory.Exists(directory))
-            {
-                Directory.CreateDirectory(directory);
-            }
-
-            // Ensure the file exists
-            if (!File.Exists(_filePath))
-            {
-                File.WriteAllText(_filePath, JsonSerializer.Serialize(new List<Student>()));
-            }
+        protected override void InitializeFile()
+        {
+            File.WriteAllText(_filePath, JsonSerializer.Serialize(new List<Student>()));
         }
 
         public async Task<IEnumerable<Student>> GetAllStudentsAsync()

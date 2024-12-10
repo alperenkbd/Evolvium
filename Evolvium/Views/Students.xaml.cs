@@ -27,7 +27,12 @@ namespace Evolvium.Presentation
         }
 
 
-        
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+
     }
 
 }

@@ -13,7 +13,13 @@
     </Page.DataContext>
 
     <Grid Margin="20">
-
+        <Button Content="&#x2190;" 
+            FontSize="16"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10"
+            Click="BackButton_Click"/>
+        
         <TextBlock Text="ASSESMENTS" 
        FontSize="30" 
        FontWeight="Bold" 

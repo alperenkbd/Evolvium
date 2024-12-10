@@ -16,7 +16,7 @@ namespace Evolvium.Presentation.ViewModels
     internal class DegreesViewModel : BaseViewModel
     {
         private readonly HttpClient _httpClient;
-        public ObservableCollection<Degree> Degrees { get; set; }
+        public ObservableCollection<Degree> Degrees { get; set; } = new ObservableCollection<Degree>();
         public RelayCommand LoadDegreesCommand { get; }
 
         public RelayCommand EditCommand { get; }
@@ -41,10 +41,10 @@ namespace Evolvium.Presentation.ViewModels
                 var degrees = await _httpClient.GetFromJsonAsync<List<Degree>>("api/Degrees");
                 if (degrees != null)
                 {
-                    Degrees?.Clear();
+                    Degrees.Clear();
                     foreach (var degree in degrees)
                     {
-                        Degrees?.Add(degree);
+                        Degrees.Add(degree);
                     }
                 }
             }

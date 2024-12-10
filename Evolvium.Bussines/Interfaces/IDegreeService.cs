@@ -10,6 +10,6 @@ namespace Evolvium.Bussines.Interfaces
     public interface IDegreeService
     {
         Task<IEnumerable<DegreeModel>> GetAllDegreesAsync();
-        Task AddDegreeAsync(DegreeModel degree);
+        Task<bool> AddDegreeAsync(DegreeModel degree);
     }
 }

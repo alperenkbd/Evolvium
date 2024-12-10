@@ -1,12 +1,12 @@
 [
   {
-    "Id": null,
-    "Name": "Master Of Art",
+    "Id": "608184",
+    "Name": "Master Of Computer Sc.",
     "LengthOfDegree": 1
   },
   {
-    "Id": null,
-    "Name": "Master Of Arts",
-    "LengthOfDegree": 1
+    "Id": "974980",
+    "Name": "Doctorate Of Philosophy",
+    "LengthOfDegree": 2
   }
 ]

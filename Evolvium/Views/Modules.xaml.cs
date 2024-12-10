@@ -30,5 +30,10 @@ namespace Evolvium.Presentation
         {
             NavigationService.Navigate(new ModulesForm());
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

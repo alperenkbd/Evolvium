@@ -43,7 +43,7 @@ namespace Evolvium.Presentation.ViewModels
                     var createdDegree = await response.Content.ReadFromJsonAsync<Degree>();
                     if (createdDegree != null)
                     {
-                        MessageBox.Show("Degree successfully created.");
+                        MessageBox.Show("Degree and modules successfully created.");
                     }
                 }
                 else
@@ -53,7 +53,7 @@ namespace Evolvium.Presentation.ViewModels
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error creating degree: {ex.Message}");
+                MessageBox.Show($"Error creating degree or modules: {ex.Message}");
             }
         }
 

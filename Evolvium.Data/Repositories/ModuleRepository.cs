@@ -9,17 +9,18 @@ using System.Threading.Tasks;
 
 namespace Evolvium.Data.Repositories
 {
-    public class ModuleRepository : IModuleRepository
+    public class ModuleRepository : BaseRepository, IModuleRepository
     {
-        private readonly string _filePath = "JsonDB/modules.json";
+        
 
-        public ModuleRepository()
+        public ModuleRepository() : base("modules.json")
         {
+            //override constructor because the json file names are different 
+        }
 
-            if (!File.Exists(_filePath))
-            {
-                File.WriteAllText(_filePath, JsonSerializer.Serialize(new List<Module>()));
-            }
+        protected override void InitializeFile()
+        {
+            File.WriteAllText(_filePath, JsonSerializer.Serialize(new List<Module>()));
         }
 
         public async Task AddModuleAsync(Module module)

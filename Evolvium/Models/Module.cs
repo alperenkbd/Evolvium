@@ -9,10 +9,9 @@ namespace Evolvium.Presentation.Models
 {
     public class Module
     {
-        public int Id { get; set; }
-        public string Number { get; set; }
+        public string Id { get; set; } = string.Empty;
+        public string DegreeId { get; set; }
         public string ModuleName { get; set; }
-        public string DegreeName { get; set; }
         public string MaxScore { get; set; }
     }
 }

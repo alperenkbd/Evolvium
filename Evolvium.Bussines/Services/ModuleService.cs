@@ -1,6 +1,7 @@
 ﻿using Evolvium.Bussines.Interfaces;
 using Evolvium.Bussines.Models;
 using Evolvium.Data.Interfaces;
+using Evolvium.Data.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,19 +20,33 @@ namespace Evolvium.Bussines.Services
             _moduleRepository = moduleRepository;
         }
 
-        public Task AddModuleAsync(ModuleModel module)
+        public async Task AddModuleAsync(ModuleModel module)
         {
-            throw new NotImplementedException();
+            await _moduleRepository.AddModuleAsync(new Data.Entities.Module
+            {
+                Id = GenerateModuleID(),
+                DegreeId = module.DegreeId,
+
+            });
         }
 
-        public Task<IEnumerable<ModuleModel>> GetAllModulesAsync()
+        public async Task<IEnumerable<ModuleModel>> GetAllModulesAsync()
         {
-            throw new NotImplementedException();
+            var modules = await _moduleRepository.GetAllModulesAsync();
+            return modules.Select(m => new ModuleModel
+            {
+                Id = m.Id,
+                DegreeId= m.DegreeId,
+                MaxScore = m.MaxScore,
+                ModuleName = m.ModuleName
+            });
         }
 
         public Task<ModuleModel> GetModuleByIdAsync(int id)
         {
             throw new NotImplementedException();
         }
+
+        public static string GenerateModuleID() => new Random().Next(100000, 999999).ToString();
     }
 }

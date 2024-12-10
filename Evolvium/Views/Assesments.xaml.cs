@@ -30,6 +30,11 @@ namespace Evolvium.Presentation.Views
         {
             MessageBox.Show("Create Assesment functionality to be implemented.");
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 
     

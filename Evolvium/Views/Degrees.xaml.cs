@@ -29,5 +29,10 @@ namespace Evolvium.Presentation.Views
         {
             NavigationService.Navigate(new DegreesForm());
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

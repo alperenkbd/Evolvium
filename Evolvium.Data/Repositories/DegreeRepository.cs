@@ -9,28 +9,17 @@ using System.Threading.Tasks;
 
 namespace Evolvium.Data.Repositories
 {
-    public class DegreeRepository : IDegreeRepository
+    public class DegreeRepository : BaseRepository, IDegreeRepository
     {
-        private readonly string _filePath;
+        
 
-        public DegreeRepository()
+        public DegreeRepository() : base("degrees.json")
         {
+        }
 
-            string _projectRoot = Path.GetFullPath
-                (Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\..\..\Evolvium\Evolvium.Data\JsonDB"));
-            _filePath = Path.Combine(_projectRoot, "degrees.json");
-
-            var directory = Path.GetDirectoryName(_filePath);
-            if (!Directory.Exists(directory))
-            {
-                Directory.CreateDirectory(directory);
-            }
-
-            // Ensure the file exists
-            if (!File.Exists(_filePath))
-            {
-                File.WriteAllText(_filePath, JsonSerializer.Serialize(new List<Student>()));
-            }
+        protected override void InitializeFile()
+        {
+            File.WriteAllText(_filePath, JsonSerializer.Serialize(new List<Degree>()));
         }
 
         public async Task AddDegreeAsync(Degree degree)
