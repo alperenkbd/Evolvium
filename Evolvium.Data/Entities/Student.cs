@@ -8,10 +8,11 @@ namespace Evolvium.Data.Entities
 {
     public class Student
     {
-        public string Id { get; set; }
+        public string? Id { get; set; } = string.Empty;
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Degree { get; set; }
-        public int Year { get; set; }
+        public string DegreeId { get; set; }
+        public string? DegreeName { get; set; }
+        public int? DegreeLength { get; set; }
     }
 }

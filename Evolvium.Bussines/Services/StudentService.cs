@@ -13,24 +13,34 @@ namespace Evolvium.Bussines.Services
     public class StudentService : IStudentService
     {
         private readonly IStudentRepository _studentRepository;
+        private readonly IDegreeRepository _degreeRepository;
 
-        public StudentService(IStudentRepository studentRepository)
+        public StudentService(IStudentRepository studentRepository, IDegreeRepository degreeRepository)
         {
             _studentRepository = studentRepository;
+            _degreeRepository = degreeRepository;
         }
 
         public async Task<IEnumerable<StudentModel>> GetAllStudentsAsync()
         {
             var students = await _studentRepository.GetAllStudentsAsync();
-            return students.Select(s => new StudentModel
+
+            
+            var degrees = (await _degreeRepository.GetAllDegreesAsync())
+                .ToDictionary(d => d.Id);
+
+            return students.Select(student => new StudentModel
             {
-                Id = s.Id,
-                FirstName = s.FirstName,
-                LastName = s.LastName
+                Id = student.Id,
+                FirstName = student.FirstName,
+                LastName = student.LastName,
+                DegreeId = student.DegreeId,
+                DegreeName = degrees.ContainsKey(student.DegreeId) ? degrees[student.DegreeId].Name : null,
+                DegreeLength = degrees.ContainsKey(student.DegreeId) ? degrees[student.DegreeId].LengthOfDegree : 0
             });
         }
 
-        public async Task<StudentModel> GetStudentByIdAsync(int id)
+        public async Task<StudentModel> GetStudentByIdAsync(string id)
         {
             var student = await _studentRepository.GetStudentByIdAsync(id);
             if (student == null) return null;
@@ -50,8 +60,7 @@ namespace Evolvium.Bussines.Services
                 Id = GenerateStudentID(),
                 FirstName = student.FirstName,
                 LastName = student.LastName,
-                Degree = student.Degree,
-                Year = student.Year
+                DegreeId = student.DegreeId
 
             });
         }

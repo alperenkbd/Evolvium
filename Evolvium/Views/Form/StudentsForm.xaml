@@ -42,7 +42,8 @@
             <Label x:Name="Label3" Content="Degree" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
             <ComboBox 
                 ItemsSource="{Binding Degrees}" 
-                SelectedItem="{Binding CurrentStudent.Degree, UpdateSourceTrigger=PropertyChanged}" 
+                SelectedValue="{Binding CurrentStudent.DegreeId, UpdateSourceTrigger=PropertyChanged}" 
+                SelectedValuePath="Id" 
                 DisplayMemberPath="Name" 
                 FontSize="24" 
                 HorizontalAlignment="Center" 

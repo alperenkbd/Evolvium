@@ -25,7 +25,7 @@ namespace Evolvium.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetStudent(int id)
+        public async Task<IActionResult> GetStudent(string id)
         {
             var student = await _studentService.GetStudentByIdAsync(id);
             if (student == null) return NotFound();

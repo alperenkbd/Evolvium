@@ -10,7 +10,7 @@ namespace Evolvium.Data.Interfaces
     public interface IStudentRepository
     {
         Task<IEnumerable<Student>> GetAllStudentsAsync();
-        Task<Student> GetStudentByIdAsync(int id);
+        Task<Student> GetStudentByIdAsync(string id);
         Task AddStudentAsync(Student student);
     }
 }

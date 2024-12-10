@@ -45,7 +45,7 @@ namespace Evolvium.Presentation.Views.Form
                 var viewModel = DataContext as StudentFormViewModel;
                 if (viewModel != null)
                 {
-                    viewModel.CurrentStudent.Degree = selectedDegree.Name;
+                    viewModel.CurrentStudent.DegreeId = selectedDegree.Id;
                 }
             }
         }

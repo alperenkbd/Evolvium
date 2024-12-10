@@ -1,16 +1,74 @@
 [
   {
-    "Id": "2024136351",
-    "FirstName": "Alperen",
-    "LastName": "Kabadayi",
-    "Degree": "Master Of Computer Sc.",
-    "Year": 0
+    "Id": "2024312392",
+    "FirstName": "ahmet",
+    "LastName": "celik",
+    "DegreeId": "726781",
+    "DegreeName": null,
+    "DegreeLength": 0
   },
   {
-    "Id": "2024891178",
-    "FirstName": "Mehmet",
-    "LastName": "Gunes",
-    "Degree": "Master Of Computer Sc.",
-    "Year": 0
+    "Id": "2024116908",
+    "FirstName": "test1",
+    "LastName": "test2",
+    "DegreeId": "726781",
+    "DegreeName": null,
+    "DegreeLength": null
+  },
+  {
+    "Id": "2024147789",
+    "FirstName": "Selim",
+    "LastName": "Kacar",
+    "DegreeId": "726781",
+    "DegreeName": null,
+    "DegreeLength": null
+  },
+  {
+    "Id": "2024588973",
+    "FirstName": "ali",
+    "LastName": "gunday",
+    "DegreeId": "726781",
+    "DegreeName": null,
+    "DegreeLength": null
+  },
+  {
+    "Id": "2024532364",
+    "FirstName": "ali",
+    "LastName": "gunday",
+    "DegreeId": "726781",
+    "DegreeName": null,
+    "DegreeLength": null
+  },
+  {
+    "Id": "2024813934",
+    "FirstName": "ali",
+    "LastName": "gunday",
+    "DegreeId": "726781",
+    "DegreeName": null,
+    "DegreeLength": null
+  },
+  {
+    "Id": "2024122773",
+    "FirstName": "ali",
+    "LastName": "gunday",
+    "DegreeId": "726781",
+    "DegreeName": null,
+    "DegreeLength": null
+  },
+  {
+    "Id": "2024364314",
+    "FirstName": "Ahmet",
+    "LastName": "Balik",
+    "DegreeId": "726781",
+    "DegreeName": null,
+    "DegreeLength": null
+  },
+  {
+    "Id": "2024113155",
+    "FirstName": "guney",
+    "LastName": "tekindor",
+    "DegreeId": "726781",
+    "DegreeName": null,
+    "DegreeLength": null
   }
 ]

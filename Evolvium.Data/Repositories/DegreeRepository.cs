@@ -31,6 +31,12 @@ namespace Evolvium.Data.Repositories
             await File.WriteAllTextAsync(_filePath, jsonData);
         }
 
+        public async Task<Degree> GetDegreeByIdAsync(string id)
+        {
+            var degrees = await GetAllDegreesAsync();
+            return degrees.FirstOrDefault(s => s.Id == id.ToString());
+        }
+
         public async Task<IEnumerable<Degree>> GetAllDegreesAsync()
         {
             var jsonData = await File.ReadAllTextAsync(_filePath);

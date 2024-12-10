@@ -52,6 +52,19 @@ namespace Evolvium.Bussines.Services
             }
         }
 
+        public async Task<DegreeModel> GetDegreeByIdAsync(string id)
+        {
+            var degree = await _degreeRepository.GetDegreeByIdAsync(id);
+            if (degree == null) return null;
+
+            return new DegreeModel
+            {
+                Id = degree.Id,
+                Name = degree.Name,
+                LengthOfDegree = degree.LengthOfDegree
+            };
+        }
+
         private List<ModuleModel> GenerateModulesForDegree(int degreeYears, string degreeId)
         {
             var modules = new List<ModuleModel>();
@@ -73,11 +86,11 @@ namespace Evolvium.Bussines.Services
         public async Task<IEnumerable<DegreeModel>> GetAllDegreesAsync()
         {
             var degrees = await _degreeRepository.GetAllDegreesAsync();
-            return degrees.Select(s => new DegreeModel
+            return degrees.Select(d => new DegreeModel
             {
-                Id = GenerateDegreeID(),
-                LengthOfDegree = s.LengthOfDegree,
-                Name = s.Name
+                Id = d.Id,
+                LengthOfDegree = d.LengthOfDegree,
+                Name = d.Name
             });
         }
 

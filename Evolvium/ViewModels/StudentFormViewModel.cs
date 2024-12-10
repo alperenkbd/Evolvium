@@ -32,6 +32,19 @@ namespace Evolvium.Presentation.ViewModels
             CreateAStudentCommand = new RelayCommand(async _ => await CreateAStudentAsync());
         }
 
+        public Degree SelectedDegree
+        {
+            get => Degrees.FirstOrDefault(d => d.Id == CurrentStudent.DegreeId);
+            set
+            {
+                if (value != null)
+                {
+                    CurrentStudent.DegreeId = value.Id;
+                }
+            }
+        }
+
+
         private async Task CreateAStudentAsync()
         {
             try

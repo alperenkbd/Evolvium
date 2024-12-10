@@ -58,8 +58,9 @@
                 <DataGridTextColumn Header="Identity" Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Name" Binding="{Binding FirstName}" />
                 <DataGridTextColumn Header="Surname" Binding="{Binding LastName}" />
-                <DataGridTextColumn Header="Degree" Binding="{Binding Degree}" />
-                <DataGridTextColumn Header="Year" Binding="{Binding Year}" />
+                <DataGridTextColumn Header="Degree Id" Binding="{Binding DegreeId}" />
+                <DataGridTextColumn Header="Degree Name" Binding="{Binding DegreeName}" />
+                <DataGridTextColumn Header="Length Of Degree" Binding="{Binding DegreeLength}" />
                 <DataGridTemplateColumn Header="Action">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

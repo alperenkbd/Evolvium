@@ -11,5 +11,6 @@ namespace Evolvium.Data.Interfaces
     {
         Task<IEnumerable<Degree>> GetAllDegreesAsync();
         Task AddDegreeAsync(Degree degree);
+        Task<Degree> GetDegreeByIdAsync(string id);
     }
 }

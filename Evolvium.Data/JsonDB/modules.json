@@ -1,109 +1,37 @@
 [
   {
-    "Id": "191107",
-    "DegreeId": "",
+    "Id": "483129",
+    "DegreeId": "726781",
     "ModuleName": null,
     "MaxScore": null
   },
   {
-    "Id": "951149",
-    "DegreeId": "",
+    "Id": "660332",
+    "DegreeId": "726781",
     "ModuleName": null,
     "MaxScore": null
   },
   {
-    "Id": "320856",
-    "DegreeId": "",
+    "Id": "257890",
+    "DegreeId": "726781",
     "ModuleName": null,
     "MaxScore": null
   },
   {
-    "Id": "557594",
-    "DegreeId": "",
+    "Id": "275331",
+    "DegreeId": "726781",
     "ModuleName": null,
     "MaxScore": null
   },
   {
-    "Id": "840318",
-    "DegreeId": "",
+    "Id": "287710",
+    "DegreeId": "726781",
     "ModuleName": null,
     "MaxScore": null
   },
   {
-    "Id": "383557",
-    "DegreeId": "",
-    "ModuleName": null,
-    "MaxScore": null
-  },
-  {
-    "Id": "194300",
-    "DegreeId": "974980",
-    "ModuleName": null,
-    "MaxScore": null
-  },
-  {
-    "Id": "758249",
-    "DegreeId": "974980",
-    "ModuleName": null,
-    "MaxScore": null
-  },
-  {
-    "Id": "223375",
-    "DegreeId": "974980",
-    "ModuleName": null,
-    "MaxScore": null
-  },
-  {
-    "Id": "407236",
-    "DegreeId": "974980",
-    "ModuleName": null,
-    "MaxScore": null
-  },
-  {
-    "Id": "300636",
-    "DegreeId": "974980",
-    "ModuleName": null,
-    "MaxScore": null
-  },
-  {
-    "Id": "204182",
-    "DegreeId": "974980",
-    "ModuleName": null,
-    "MaxScore": null
-  },
-  {
-    "Id": "302337",
-    "DegreeId": "974980",
-    "ModuleName": null,
-    "MaxScore": null
-  },
-  {
-    "Id": "848883",
-    "DegreeId": "974980",
-    "ModuleName": null,
-    "MaxScore": null
-  },
-  {
-    "Id": "969924",
-    "DegreeId": "974980",
-    "ModuleName": null,
-    "MaxScore": null
-  },
-  {
-    "Id": "297751",
-    "DegreeId": "974980",
-    "ModuleName": null,
-    "MaxScore": null
-  },
-  {
-    "Id": "997096",
-    "DegreeId": "974980",
-    "ModuleName": null,
-    "MaxScore": null
-  },
-  {
-    "Id": "386619",
-    "DegreeId": "974980",
+    "Id": "474326",
+    "DegreeId": "726781",
     "ModuleName": null,
     "MaxScore": null
   }

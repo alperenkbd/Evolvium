@@ -29,7 +29,7 @@ namespace Evolvium.Data.Repositories
             return JsonSerializer.Deserialize<List<Student>>(jsonData) ?? new List<Student>();
         }
 
-        public async Task<Student> GetStudentByIdAsync(int id)
+        public async Task<Student> GetStudentByIdAsync(string id)
         {
             var students = await GetAllStudentsAsync();
             return students.FirstOrDefault(s => s.Id == id.ToString());
