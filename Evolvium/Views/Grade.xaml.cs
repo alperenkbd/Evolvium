@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Evolvium.Presentation.Views.Form;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,25 @@ namespace Evolvium.Presentation.Views
         public Grade()
         {
             InitializeComponent();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+
+            if (button != null)
+            {
+                var assesmentId = button.CommandParameter;
+
+                NavigationService.Navigate(new GradesForm(assesmentId.ToString()));
+
+            }
+
         }
     }
 }

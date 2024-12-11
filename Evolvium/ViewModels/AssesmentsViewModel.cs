@@ -16,7 +16,7 @@ namespace Evolvium.Presentation.ViewModels
     internal class AssesmentsViewModel : BaseViewModel
     {
         private readonly HttpClient _httpClient;
-        public ObservableCollection<Assesment> Assesments { get; set; }
+        public ObservableCollection<Assesment> Assesments { get; set; } = new ObservableCollection<Assesment>();
         public RelayCommand LoadAssesmentsCommand { get; }
 
 
@@ -46,7 +46,7 @@ namespace Evolvium.Presentation.ViewModels
                     Assesments?.Clear();
                     foreach (var assesment in assesments)
                     {
-                        Assesments?.Add(assesment);
+                        Assesments.Add(assesment);
                     }
                 }
             }

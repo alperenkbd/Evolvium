@@ -43,11 +43,23 @@
                 AlternatingRowBackground="#EDEDED"
                 BorderThickness="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Assesment Id" Binding="{Binding GradeId}" />
+                <DataGridTextColumn Header="Grade Id" Binding="{Binding GradeId}" />
+                <DataGridTextColumn Header="Grade Id" Binding="{Binding StudentName}" />
+                <DataGridTextColumn Header="Grade Id" Binding="{Binding StudentLastName}" />
                 <DataGridTextColumn Header="Degree Id" Binding="{Binding DegreeId}" />
+                <DataGridTextColumn Header="Degree Name" Binding="{Binding DegreeName}" />
                 <DataGridTextColumn Header="Module Id" Binding="{Binding ModuleId}" />
-                <DataGridTextColumn Header="Assesment Max Score" Binding="{Binding Score}" />
+                <DataGridTextColumn Header="Assesment Max Score" Binding="{Binding MaxGrade}" />
                 <DataGridTextColumn Header="Student Result" Binding="{Binding Result}" />
+                <DataGridTemplateColumn Header="Action">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Update"
+                    Click="UpdateButton_Click" 
+                    CommandParameter="{Binding Id}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

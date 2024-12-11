@@ -55,9 +55,9 @@ namespace Evolvium.Bussines.Services
         }
 
 
-        public Task<IEnumerable<Assesment>> GetAllAssesmentsAsync()
+        public async Task<IEnumerable<Assesment>> GetAllAssesmentsAsync()
         {
-            throw new NotImplementedException();
+            return await _assesmentRepository.GetAllAssesmentsAsync();
         }
 
         public static string GenerateAssesmentID() => new Random().Next(100000, 999999).ToString();

@@ -13,5 +13,6 @@ namespace Evolvium.Data.Interfaces
         Task AddAssesmentAsync(Assesment assesment);
         Task<IEnumerable<Assesment>> GetByModuleIdAsync(string moduleId);
         Task AddAsync(Assesment assessment);
+        Task<IEnumerable<Assesment>> GetAssessmentsByModuleIdAsync(string moduleId);
     }
 }

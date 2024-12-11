@@ -63,5 +63,12 @@ namespace Evolvium.Data.Repositories
             var modules = await GetAllModulesAsync();
             return modules.FirstOrDefault(s => s.Id == id.ToString());
         }
+
+
+        public async Task<IEnumerable<Module>> GetModulesByDegreeIdAsync(string degreeId)
+        {
+            var modules = await GetAllModulesAsync();
+            return modules.Where(m => m.DegreeId == degreeId).ToList();
+        }
     }
 }

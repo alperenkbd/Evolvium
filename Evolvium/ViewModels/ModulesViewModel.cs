@@ -21,16 +21,12 @@ namespace Evolvium.Presentation.ViewModels
 
         public ObservableCollection<Module> Modules { get; set; } = new ObservableCollection<Module>();
 
-        private readonly INavigationService _navigationService;
-
         public RelayCommand EditCommand { get; }
         public RelayCommand LoadModulesCommand { get; }
 
 
         public ModulesViewModel()
         {
-            _navigationService = new NavigationService();
-
 
             _httpClient = new HttpClient
             {
@@ -41,7 +37,6 @@ namespace Evolvium.Presentation.ViewModels
 
             _ = LoadModulesAsync();
 
-            EditCommand = new RelayCommand(OnEditModule);
         }
 
         private async Task LoadModulesAsync()
@@ -64,12 +59,5 @@ namespace Evolvium.Presentation.ViewModels
             }
         }
 
-        private void OnEditModule(object parameter)
-        {
-            if (parameter is not null)
-            {
-                _navigationService.NavigateTo("ModulesForm", parameter);
-            }
-        }
     }
 }

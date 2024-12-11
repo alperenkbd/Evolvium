@@ -41,7 +41,7 @@
     Click="AddAssesment_Click"/>
 
         <DataGrid
-    ItemsSource="{Binding Assesment}" 
+    ItemsSource="{Binding Assesments}" 
     AutoGenerateColumns="False"
     x:Name="ModulesGrid"
     Margin="0,140,0,0" 

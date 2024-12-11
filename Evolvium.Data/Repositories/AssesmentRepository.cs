@@ -60,5 +60,14 @@ namespace Evolvium.Data.Repositories
             return assessments.Where(a => a.ModuleId == moduleId);
         }
 
+        public async Task<IEnumerable<Assesment>> GetAssessmentsByModuleIdAsync(string moduleId)
+        {
+            var jsonData = await File.ReadAllTextAsync(_filePath);
+            var assessments = JsonSerializer.Deserialize<List<Assesment>>(jsonData) ?? new List<Assesment>();
+
+            return assessments.Where(a => a.ModuleId == moduleId).ToList();
+        }
+
+
     }
 }
