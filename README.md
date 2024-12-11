@@ -17,6 +17,43 @@
 
 ---
 
+## Images from App
+
+### Images from Public Directory
+
+### Image 1
+![Image 1](https://github.com/alperenkbd/Evolvium/blob/master/Evolvium/Public/1.png)
+
+### Image 2
+![Image 2](https://github.com/alperenkbd/Evolvium/blob/master/Evolvium/Public/2.png)
+
+### Image 3
+![Image 3](https://github.com/alperenkbd/Evolvium/blob/master/Evolvium/Public/3.png)
+
+### Image 4
+![Image 4](https://github.com/alperenkbd/Evolvium/blob/master/Evolvium/Public/4.png)
+
+### Image 5
+![Image 5](https://github.com/alperenkbd/Evolvium/blob/master/Evolvium/Public/5.png)
+
+### Image 6
+![Image 6](https://github.com/alperenkbd/Evolvium/blob/master/Evolvium/Public/6.png)
+
+### Image 7
+![Image 7](https://github.com/alperenkbd/Evolvium/blob/master/Evolvium/Public/7.png)
+
+### Image 8
+![Image 8](https://github.com/alperenkbd/Evolvium/blob/master/Evolvium/Public/8.png)
+
+### Image 9
+![Image 9](https://github.com/alperenkbd/Evolvium/blob/master/Evolvium/Public/9.png)
+
+### Image 10
+![Image 10](https://github.com/alperenkbd/Evolvium/blob/master/Evolvium/Public/10.png)
+
+### Image 11
+![Image 11](https://github.com/alperenkbd/Evolvium/blob/master/Evolvium/Public/11.png)
+
 ### Introduction
 
 This project aims to follow students’ progress, calculate grades automatically, and create reports for summaries. The project consists of seven screens: Login, Dashboard, Student Management, Course Management, Module Management, Assessment Management, and Grades/Results Screens. This document explains how the project is designed, the relationship between screens, their functionalities, and the project’s layers.
