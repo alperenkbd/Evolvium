@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evolvium.Presentation", "Evolvium\Evolvium.Presentation.csproj", "{0AB18D50-20B4-4AE7-AC0B-27BBECC561B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evolvium.Presentation", "Evolvium\Evolvium.Presentation.csproj", "{0AB18D50-20B4-4AE7-AC0B-27BBECC561B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evolvium.API", "Evolvium.API\Evolvium.API.csproj", "{5699A9CA-C5C4-4D67-94F0-0DF1C42915A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evolvium.API", "Evolvium.API\Evolvium.API.csproj", "{5699A9CA-C5C4-4D67-94F0-0DF1C42915A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evolvium.Bussines", "Evolvium.Bussines\Evolvium.Bussines.csproj", "{523AC045-3E94-4FC0-952D-C9A3DE8EFAB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evolvium.Bussines", "Evolvium.Bussines\Evolvium.Bussines.csproj", "{523AC045-3E94-4FC0-952D-C9A3DE8EFAB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evolvium.Data", "Evolvium.Data\Evolvium.Data.csproj", "{A2B3FBFB-0ED1-4173-B1B3-04DDEADDA6D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evolvium.Data", "Evolvium.Data\Evolvium.Data.csproj", "{A2B3FBFB-0ED1-4173-B1B3-04DDEADDA6D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "public", "public", "{6964E20D-04C6-4BFA-8481-C23EA5516390}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
