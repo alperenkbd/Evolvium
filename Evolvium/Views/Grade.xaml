@@ -44,8 +44,9 @@
                 BorderThickness="0">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Grade Id" Binding="{Binding GradeId}" />
-                <DataGridTextColumn Header="Grade Id" Binding="{Binding StudentName}" />
-                <DataGridTextColumn Header="Grade Id" Binding="{Binding StudentLastName}" />
+                <DataGridTextColumn Header="Assesment Id" Binding="{Binding AssesmentId}" />
+                <DataGridTextColumn Header="Student Name" Binding="{Binding StudentName}" />
+                <DataGridTextColumn Header="Student lastname" Binding="{Binding StudentLastName}" />
                 <DataGridTextColumn Header="Degree Id" Binding="{Binding DegreeId}" />
                 <DataGridTextColumn Header="Degree Name" Binding="{Binding DegreeName}" />
                 <DataGridTextColumn Header="Module Id" Binding="{Binding ModuleId}" />
@@ -55,8 +56,8 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Update"
-                    Click="UpdateButton_Click" 
-                    CommandParameter="{Binding Id}" />
+                                    Click="UpdateButton_Click" 
+                                    CommandParameter="{Binding AssesmentId}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
