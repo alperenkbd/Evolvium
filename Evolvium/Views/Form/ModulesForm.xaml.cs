@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Evolvium.Presentation.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,18 @@ namespace Evolvium.Presentation.Views.Form
     /// </summary>
     public partial class ModulesForm : Page
     {
-        public ModulesForm()
+        string _moduleId;
+        public ModulesForm(string moduleId = null)
         {
             InitializeComponent();
+            _moduleId = moduleId;
+
+            this.DataContext = new ModulesFormViewModel();
+            var viewModel = this.DataContext as ModulesFormViewModel;
+            if (viewModel != null)
+            {
+                viewModel.ModuleId = moduleId;
+            }
         }
 
         private void GoBack_Click(object sender, RoutedEventArgs e)

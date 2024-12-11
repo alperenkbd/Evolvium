@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Evolvium.Presentation.Views.Form;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,7 @@ namespace Evolvium.Presentation.Views
 
         private void AddAssesment_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Create Assesment functionality to be implemented.");
+            NavigationService.Navigate(new AssesmentsForm());
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

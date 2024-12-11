@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Evolvium.Presentation
+namespace Evolvium.Presentation.Views
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Interaction logic for Grade.xaml
     /// </summary>
-    public partial class Login : Page
+    public partial class Grade : Page
     {
-        public Login()
+        public Grade()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-                NavigationService.Navigate(new Dashboard());
         }
     }
 }

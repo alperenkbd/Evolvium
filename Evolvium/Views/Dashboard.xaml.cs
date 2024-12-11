@@ -64,9 +64,9 @@ namespace Evolvium.Presentation
             NavigationService.Navigate(new Assesments());
         }
 
-        private void Logout(object sender, RoutedEventArgs e)
+        private void NavigateToGrades(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Grade());
         }
     }
 }

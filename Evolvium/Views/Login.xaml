@@ -11,11 +11,9 @@
     <Grid>
         <TextBlock Text="EVOLVIUM LOGIN PAGE" FontSize="35" TextAlignment="Center" Foreground="#FF620000" VerticalAlignment="Top"/>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Height="170">
-            <Label x:Name="UsernameLabel" Content="Username" Foreground="#FFD4D4D4" FontSize="16" Height="29" Width="260"/>
-            <TextBox x:Name="Username" Width="252" Foreground="#FF620000" Height="38" TextWrapping="Wrap" FontWeight="Bold" FontSize="16"/>
-            <Button x:Name="LoginButton" Content="LOGIN" Margin="30" Height="38" Width="212" Foreground="White" FontSize="14" FontWeight="Bold" Background="#FF620000" BorderBrush="White" Click="Button_Click"/>
+            
+            <Button x:Name="LoginButton" Content="CLICK FOR ADMIN LOGIN" Margin="30" Height="38" Width="212" Foreground="White" FontSize="14" FontWeight="Bold" Background="#FF620000" BorderBrush="White" Click="Button_Click"/>
         </StackPanel>
-        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" Height="169" Width="215" 
-                   Foreground="#FFD4D4D4" TextAlignment="Center" Margin="0,0,10,10"><Run Text="This page has been created to simulate "/><LineBreak/><Run Text="an admin and student login."/><LineBreak/><Run/><LineBreak/><Run Text="For admin rights:"/><LineBreak/><Run Text="username: Admin"/><LineBreak/><Run/><LineBreak/><Run Text="For students rights:"/><LineBreak/><Run Text="username: &lt;student number&gt;"/></TextBlock>
+        
     </Grid>
 </Page>

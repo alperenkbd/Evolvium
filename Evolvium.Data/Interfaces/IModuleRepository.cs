@@ -11,6 +11,7 @@ namespace Evolvium.Data.Interfaces
     {
         Task<IEnumerable<Module>> GetAllModulesAsync();
         Task<Module> GetModuleByIdAsync(int id);
+        Task UpdateModuleAsync(Module updatedModule);
         Task AddModuleAsync(Module module);
     }
 }

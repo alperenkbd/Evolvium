@@ -20,6 +20,9 @@ builder.Services.AddScoped<IModuleRepository, ModuleRepository>();
 builder.Services.AddScoped<IDegreeService, DegreeService>();
 builder.Services.AddScoped<IDegreeRepository, DegreeRepository>();
 
+builder.Services.AddScoped<IAssesmentService, AssesmentService>();
+builder.Services.AddScoped<IAssesmentRepository, AssesmentRepository>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

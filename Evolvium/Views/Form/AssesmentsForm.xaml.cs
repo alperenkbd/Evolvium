@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Evolvium.Presentation.Models;
+using Evolvium.Presentation.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,47 @@ namespace Evolvium.Presentation.Views.Form
         public AssesmentsForm()
         {
             InitializeComponent();
+        }
+
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        private void ComboBox_DegreeDropDownOpened(object sender, EventArgs e)
+        {
+            var viewModel = DataContext as AssesmentsFormViewModel;
+            viewModel?.LoadDegreesCommand.Execute(null);
+        }
+
+        private void ComboBox_DegreeSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0 && e.AddedItems[0] is Degree selectedDegree)
+            {
+                var viewModel = DataContext as StudentFormViewModel;
+                if (viewModel != null)
+                {
+                    viewModel.CurrentStudent.DegreeId = selectedDegree.Id;
+                }
+            }
+        }
+
+        private void ComboBox_ModuleDropDownOpened(object sender, EventArgs e)
+        {
+            var viewModel = DataContext as AssesmentsFormViewModel;
+            viewModel?.LoadModulesCommand.Execute(null);
+        }
+
+        private void ComboBox_ModuleSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0 && e.AddedItems[0] is Module selectedModule)
+            {
+                var viewModel = DataContext as StudentFormViewModel;
+                if (viewModel != null)
+                {
+                    viewModel.CurrentStudent.DegreeId = selectedModule.Id;
+                }
+            }
         }
     }
 }

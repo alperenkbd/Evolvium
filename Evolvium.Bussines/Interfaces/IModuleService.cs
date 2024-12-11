@@ -1,4 +1,5 @@
 ﻿using Evolvium.Bussines.Models;
+using Evolvium.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,9 @@ namespace Evolvium.Bussines.Interfaces
     public interface IModuleService
     {
         Task<IEnumerable<ModuleModel>> GetAllModulesAsync();
-        Task<ModuleModel> GetModuleByIdAsync(int id);
+        Task<Module> GetModuleByIdAsync(string id);
+        Task<ModuleModel?> UpdateModuleByIdAsync(string id, ModuleModel updatedModule);
+        Task<IEnumerable<Module>> GetModulesByDegreeIdAsync(string degreeId);
         Task AddModuleAsync(ModuleModel module);
     }
 }

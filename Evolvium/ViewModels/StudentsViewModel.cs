@@ -15,7 +15,6 @@ namespace Evolvium.Presentation.ViewModels
         private readonly HttpClient _httpClient;
 
         public ObservableCollection<Student> Students { get; set; }
-        public RelayCommand EditCommand { get; }
         public RelayCommand LoadStudentsCommand { get; }
         
 
@@ -28,7 +27,6 @@ namespace Evolvium.Presentation.ViewModels
             };
 
             Students = new ObservableCollection<Student>();
-            EditCommand = new RelayCommand(OnEditStudent);
             LoadStudentsCommand = new RelayCommand(async _ => await LoadStudentsAsync());
 
             _ = LoadStudentsAsync();
@@ -56,13 +54,5 @@ namespace Evolvium.Presentation.ViewModels
 
         
 
-        private void OnEditStudent(object parameter)
-        {
-            var student = parameter as Student;
-            if (student != null)
-            {
-                MessageBox.Show($"Editing Module: ");
-            }
-        }
     }
 }

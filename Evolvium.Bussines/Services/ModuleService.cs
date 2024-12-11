@@ -1,5 +1,6 @@
 ﻿using Evolvium.Bussines.Interfaces;
 using Evolvium.Bussines.Models;
+using Evolvium.Data.Entities;
 using Evolvium.Data.Interfaces;
 using Evolvium.Data.Repositories;
 using System;
@@ -14,11 +15,15 @@ namespace Evolvium.Bussines.Services
     {
 
         private readonly IModuleRepository _moduleRepository;
+        private readonly IDegreeRepository _degreeRepository;
 
-        public ModuleService(IModuleRepository moduleRepository)
+        public ModuleService(IModuleRepository moduleRepository, IDegreeRepository degreeRepository)
         {
             _moduleRepository = moduleRepository;
+            _degreeRepository = degreeRepository;
         }
+
+
 
         public async Task AddModuleAsync(ModuleModel module)
         {
@@ -30,22 +35,80 @@ namespace Evolvium.Bussines.Services
             });
         }
 
+        public async Task<IEnumerable<Module>> GetModulesByDegreeIdAsync(string degreeId)
+        {
+            var modules = await _moduleRepository.GetAllModulesAsync();
+
+            return modules.Where(m => m.DegreeId == degreeId);
+        }
+
+
+        public async Task<ModuleModel?> UpdateModuleByIdAsync(string id, ModuleModel updatedModule)
+        {
+            
+            var existingModuleEntity = await GetModuleByIdAsync(id);
+            if (existingModuleEntity == null)
+            {
+                return null; 
+            }
+
+            existingModuleEntity.ModuleName = updatedModule.ModuleName;
+            existingModuleEntity.MaxScore = updatedModule.MaxScore;
+            existingModuleEntity.DegreeId = updatedModule.DegreeId;
+
+            
+            await _moduleRepository.UpdateModuleAsync(existingModuleEntity);
+
+            return new ModuleModel
+            {
+                Id = existingModuleEntity.Id,
+                DegreeId = existingModuleEntity.DegreeId,
+                DegreeName = updatedModule.DegreeName, 
+                MaxScore = existingModuleEntity.MaxScore,
+                ModuleName = existingModuleEntity.ModuleName
+            };
+        }
+
+
+
         public async Task<IEnumerable<ModuleModel>> GetAllModulesAsync()
         {
             var modules = await _moduleRepository.GetAllModulesAsync();
+
+            var degrees = (await _degreeRepository.GetAllDegreesAsync())
+                .ToDictionary(d => d.Id);
+
             return modules.Select(m => new ModuleModel
             {
                 Id = m.Id,
                 DegreeId= m.DegreeId,
+                DegreeName = degrees.ContainsKey(m.DegreeId) ? degrees[m.DegreeId].Name : null,
                 MaxScore = m.MaxScore,
                 ModuleName = m.ModuleName
             });
         }
 
-        public Task<ModuleModel> GetModuleByIdAsync(int id)
+        public async Task<Module?> GetModuleByIdAsync(string id)
         {
-            throw new NotImplementedException();
+            var moduleEntity = await _moduleRepository.GetModuleByIdAsync(int.Parse(id));
+            if (moduleEntity == null)
+            {
+                return null; 
+            }
+
+            var degree = await _degreeRepository.GetDegreeByIdAsync(moduleEntity.DegreeId);
+
+            
+            return new Module
+            {
+                Id = moduleEntity.Id,
+                DegreeId = moduleEntity.DegreeId,
+                DegreeName = degree?.Name, 
+                MaxScore = moduleEntity.MaxScore,
+                ModuleName = moduleEntity.ModuleName
+            };
         }
+
 
         public static string GenerateModuleID() => new Random().Next(100000, 999999).ToString();
     }

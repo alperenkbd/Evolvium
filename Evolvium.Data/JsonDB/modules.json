@@ -2,36 +2,42 @@
   {
     "Id": "483129",
     "DegreeId": "726781",
-    "ModuleName": null,
-    "MaxScore": null
+    "DegreeName": null,
+    "ModuleName": "CDP",
+    "MaxScore": "100"
   },
   {
     "Id": "660332",
     "DegreeId": "726781",
+    "DegreeName": null,
     "ModuleName": null,
     "MaxScore": null
   },
   {
     "Id": "257890",
     "DegreeId": "726781",
+    "DegreeName": null,
     "ModuleName": null,
     "MaxScore": null
   },
   {
     "Id": "275331",
     "DegreeId": "726781",
+    "DegreeName": null,
     "ModuleName": null,
     "MaxScore": null
   },
   {
     "Id": "287710",
     "DegreeId": "726781",
+    "DegreeName": null,
     "ModuleName": null,
     "MaxScore": null
   },
   {
     "Id": "474326",
     "DegreeId": "726781",
+    "DegreeName": null,
     "ModuleName": null,
     "MaxScore": null
   }

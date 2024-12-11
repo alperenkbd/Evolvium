@@ -1,4 +1,5 @@
 ﻿using Evolvium.Presentation.Commands;
+using Evolvium.Presentation.Interface;
 using Evolvium.Presentation.Models;
 using System;
 using System.Collections.Generic;
@@ -9,21 +10,28 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Evolvium.Presentation.Service;
 
 
 namespace Evolvium.Presentation.ViewModels
 {
-    internal class ModulesViewModel : BaseViewModel
+    public class ModulesViewModel : BaseViewModel
     {
         private readonly HttpClient _httpClient;
 
         public ObservableCollection<Module> Modules { get; set; } = new ObservableCollection<Module>();
 
+        private readonly INavigationService _navigationService;
+
         public RelayCommand EditCommand { get; }
         public RelayCommand LoadModulesCommand { get; }
 
+
         public ModulesViewModel()
         {
+            _navigationService = new NavigationService();
+
+
             _httpClient = new HttpClient
             {
                 BaseAddress = new Uri("http://localhost:5218/")
@@ -58,10 +66,9 @@ namespace Evolvium.Presentation.ViewModels
 
         private void OnEditModule(object parameter)
         {
-            var module = parameter as Module;
-            if (module != null)
+            if (parameter is not null)
             {
-                MessageBox.Show($"Editing Module: {module.ModuleName}");
+                _navigationService.NavigateTo("ModulesForm", parameter);
             }
         }
     }

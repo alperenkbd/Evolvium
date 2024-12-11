@@ -14,39 +14,24 @@
 
     <Grid Margin="10">
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" Width="300">
-            <TextBlock Text="Add New Module" 
+            <TextBlock Text="Update Module Name" 
                FontSize="24" 
                FontWeight="Bold" 
                Foreground="DarkRed" 
                HorizontalAlignment="Center" 
                Margin="0,0,0,20"/>
-            <Label x:Name="Label0" Content="Number" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
-            <TextBox Text="{Binding CurrentModule.Number}" 
-        FontSize="24" 
-        HorizontalAlignment="Center" 
-        Margin="0,0,0,20"
-        Width="300"/>
-            <Label x:Name="Label1" Content="ModuleName" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
-            <TextBox Text="{Binding CurrentModule.ModuleName}" 
-               FontSize="24" 
-               HorizontalAlignment="Center" 
-               Margin="0,0,0,20"
-               Width="300"/>
-            <Label x:Name="Label2" Content="MaxScore" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
-            <TextBox Text="{Binding CurrentModule.MaxScore}" 
-              FontSize="24" 
-               HorizontalAlignment="Center" 
-               Margin="0,0,0,20"
-               Width="300"/>
-            <Label x:Name="Label3" Content="DegreeName" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
-            <TextBox Text="{Binding CurrentModule.DegreeName}" 
+            
+            
+            
+            <Label x:Name="Label0" Content="Module Name" Foreground="#FFD4D4D4" FontSize="13" Height="24" Width="300"/>
+            <TextBox Text="{Binding CurrentModuleName}" 
               FontSize="24" 
                HorizontalAlignment="Center" 
                Margin="0,0,0,20"
                Width="300"/>
 
-            <Button Content="Add Student" 
-            Command="{Binding CreateCommand}" 
+            <Button Content="Update Module" 
+            Command="{Binding UpdateModuleCommand}" 
             Background="DarkGreen"
             Foreground="White"
             Height="40"

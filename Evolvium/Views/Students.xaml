@@ -61,15 +61,6 @@
                 <DataGridTextColumn Header="Degree Id" Binding="{Binding DegreeId}" />
                 <DataGridTextColumn Header="Degree Name" Binding="{Binding DegreeName}" />
                 <DataGridTextColumn Header="Length Of Degree" Binding="{Binding DegreeLength}" />
-                <DataGridTemplateColumn Header="Action">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Content="Update"
-                                Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=Page}}"
-                                CommandParameter="{Binding}" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

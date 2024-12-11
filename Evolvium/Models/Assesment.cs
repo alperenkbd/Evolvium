@@ -8,10 +8,9 @@ namespace Evolvium.Presentation.Models
 {
     public class Assesment
     {
-        public Guid AssesmentId { get; set; }
-        public Student? DefinedStudent { get; set; }
-        public Degree? DefinedDegree { get; set; }
-        public Module? DefinedModule { get; set; }
+        public string? AssessmentId { get; set; }
+        public string ModuleId { get; set; }
+        public string DegreeId { get; set; }
         public float Score { get; set; }
     }
 }

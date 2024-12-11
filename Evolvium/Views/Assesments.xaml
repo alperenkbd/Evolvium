@@ -54,25 +54,10 @@
     AlternatingRowBackground="#EDEDED"
     BorderThickness="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Student Number" Binding="{Binding DefinedStudent.Number}" />
-                <DataGridTextColumn Header="Student Name" Binding="{Binding DefinedStudent.Name}" />
-                <DataGridTextColumn Header="Student Surname" Binding="{Binding DefinedStudent.Surname}" />
-                <DataGridTextColumn Header="Student Degree" Binding="{Binding DefinedStudent.Degree}" />
-                <DataGridTextColumn Header="Student Year" Binding="{Binding DefinedStudent.Year}" />
-                <DataGridTextColumn Header="Degree Name" Binding="{Binding DefinedDegree.Name}" />
-                <DataGridTextColumn Header="Module Number" Binding="{Binding DefinedModule.Number}" />
-                <DataGridTextColumn Header="Module Name" Binding="{Binding DefinedModule.ModuleName}" />
-                <DataGridTextColumn Header="Max Score" Binding="{Binding DefinedModule.MaxScore}" />
-                <DataGridTextColumn Header="Score" Binding="{Binding Score}" />
-                <DataGridTemplateColumn Header="Action">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Content="Update"
-                            Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=Page}}"
-                            CommandParameter="{Binding}" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Assesment Id" Binding="{Binding AssessmentId}" />
+                <DataGridTextColumn Header="Degree Id" Binding="{Binding DegreeId}" />
+                <DataGridTextColumn Header="Module Id" Binding="{Binding ModuleId}" />
+                <DataGridTextColumn Header="Module's Assesment Score" Binding="{Binding Score}" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

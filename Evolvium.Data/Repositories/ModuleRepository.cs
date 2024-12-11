@@ -38,6 +38,26 @@ namespace Evolvium.Data.Repositories
             return JsonSerializer.Deserialize<List<Module>>(jsonData) ?? new List<Module>();
         }
 
+        public async Task UpdateModuleAsync(Module updatedModule)
+        {
+            var modules = (await GetAllModulesAsync()).ToList();
+
+            var existingModule = modules.FirstOrDefault(m => m.Id == updatedModule.Id);
+
+            if (existingModule == null)
+            {
+                throw new Exception($"Module with ID {updatedModule.Id} not found.");
+            }
+
+            existingModule.ModuleName = updatedModule.ModuleName;
+            existingModule.MaxScore = updatedModule.MaxScore;
+            existingModule.DegreeId = updatedModule.DegreeId;
+
+            var jsonData = JsonSerializer.Serialize(modules, new JsonSerializerOptions { WriteIndented = true });
+            await File.WriteAllTextAsync(_filePath, jsonData);
+        }
+
+
         public async Task<Module> GetModuleByIdAsync(int id)
         {
             var modules = await GetAllModulesAsync();

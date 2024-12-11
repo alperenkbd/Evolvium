@@ -16,10 +16,11 @@ namespace Evolvium.Presentation.ViewModels
     {
         private readonly HttpClient _httpClient;
         public Module CurrentModule { get; set; }
-        public RelayCommand CreateCommand { get; }
-        public RelayCommand CreateAModuleCommand { get; }
+        public RelayCommand UpdateModuleCommand { get; }
 
         public ICommand GoBackCommand { get; }
+        public string ModuleId { get; set; }
+        public string CurrentModuleName { get; set; }
 
         public ModulesFormViewModel()
         {
@@ -29,33 +30,48 @@ namespace Evolvium.Presentation.ViewModels
             };
 
 
-            CreateAModuleCommand = new RelayCommand(async _ => await CreateAModuleAsync());
+            UpdateModuleCommand = new RelayCommand(async _ => await UpdateModuleAsync());
         }
 
-        private async Task CreateAModuleAsync()
+        private async Task UpdateModuleAsync()
         {
+            if (string.IsNullOrEmpty(ModuleId))
+            {
+                MessageBox.Show("Module ID is null or empty, cannot update.");
+                return;
+            }
+
             try
             {
-                var response = await _httpClient.PostAsJsonAsync("api/Modules", CurrentModule);
+                var response = await _httpClient.GetFromJsonAsync<Module>($"api/Modules/{ModuleId}");
 
-                if (response.IsSuccessStatusCode)
+                if (response != null)
                 {
-                    var createdModule = await response.Content.ReadFromJsonAsync<Module>();
-                    if (createdModule != null)
+                    Module _module = response;
+
+                    _module.ModuleName= CurrentModuleName;
+
+                    var putResponse = await _httpClient.PutAsJsonAsync($"api/Modules/{_module.Id}", _module);
+
+                    if (putResponse.IsSuccessStatusCode)
                     {
-                        MessageBox.Show("Module successfully created.");
+                        MessageBox.Show($"Module updated successfully: {_module.ModuleName}");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Failed to update module. Status: {putResponse.StatusCode}");
                     }
                 }
                 else
                 {
-                    MessageBox.Show($"Failed to create module: {response.StatusCode}");
+                    MessageBox.Show($"Module with ID {ModuleId} not found.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error creating module: {ex.Message}");
+                MessageBox.Show($"Error updating module: {ex.Message}");
             }
-
         }
+
     }
 }

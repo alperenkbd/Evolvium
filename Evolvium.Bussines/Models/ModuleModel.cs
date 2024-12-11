@@ -11,6 +11,7 @@ namespace Evolvium.Bussines.Models
     {
         public string Id { get; set; }
         public string DegreeId { get; set; }
+        public string? DegreeName { get; set; }
         public string ModuleName { get; set; }
         public string MaxScore { get; set; }
     }

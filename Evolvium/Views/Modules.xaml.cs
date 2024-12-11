@@ -1,18 +1,13 @@
-﻿using Evolvium.Presentation.Views.Form;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Evolvium.Presentation.Interface;
+using Evolvium.Presentation.Models;
+using Evolvium.Presentation.ViewModels;
+using Evolvium.Presentation.Views.Form;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Evolvium.Presentation.Service;
+using System;
+using System.Reflection;
 
 namespace Evolvium.Presentation
 {
@@ -21,9 +16,12 @@ namespace Evolvium.Presentation
     /// </summary>
     public partial class Modules : Page
     {
+
+
         public Modules()
         {
             InitializeComponent();
+
         }
 
         private void AddModule_Click(object sender, RoutedEventArgs e)
@@ -35,5 +33,21 @@ namespace Evolvium.Presentation
         {
             NavigationService.GoBack();
         }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+
+            if (button != null)
+            {
+                var moduleId = button.CommandParameter;
+
+                NavigationService.Navigate(new ModulesForm(moduleId.ToString()));
+
+            }
+
+
+        }
+
     }
 }
